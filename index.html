@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hesap Makinesi</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<script>
+   	var s1=0;
+   	var s2=0;
+   	let kontrol=true;
+   	var s =0;
+   	var simdiki=0;
+   	var sonuc=0;
+   	var islem;
+   		$(function(){
+   			for(var i=0; i<10; i++){
+   				$("#al"+i).click(function(){
+
+   					if(kontrol == true ){
+   						var value = $(this).html();
+   						s=s*10+parseInt(value);
+   						s1=s;
+   						$("#metin").val(s1); 						
+   					}
+   					else{
+   						var value2 = $(this).html();
+   						simdiki=simdiki*10+parseInt(value2);						
+   						s2=simdiki;
+   						$("#metin").val(s2);
+   						
+   					}	
+   					$(".islem").click(function(){
+   						kontrol=false;
+   						islem=$(this).text();
+   						$("#metin").html("");
+   						if(islem === "="){ 					
+   						$("#metin").val(sonuc);   										
+   						}
+   					});
+   					$(".sil").click(function(){
+   						$("#metin").val("");
+   						sonuc=0;
+   						s=0;
+   						simdiki=0;
+   						kontrol=true;
+   						
+   						});
+   					if(islem === "+"){
+   						sonuc=0;					
+   						sonuc=s1+s2;
+   						
+   					}
+   					else if(islem === "/"){
+   						sonuc=0;
+   						sonuc=s1/s2;
+   						
+   					}
+   					else if(islem === "x"){
+   						sonuc=0;
+   						sonuc=s1*s2;
+   						
+   					}
+   					else if(islem === "-"){
+   						sonuc=0;
+   						sonuc=s1-s2;
+   						
+   					}
+   				});
+   			}
+		});	
+   </script> 
+</head>
+<body>
+	<div class="dis">
+	<div class="ic">
+		<div class="islem">
+			
+				<input  type="number" id="metin"  >
+		</div>
+		<div class="calculator">
+			<button class="al sil">C</button>
+			
+			<button id="al7" class="al">7</button>
+			<button id="al8" class="al">8</button>
+			<button id="al9" class="al">9</button>
+			<button class="al islem">/</button>
+			
+			<button id="al4" class="al">4</button>
+			<button id="al5" class="al">5</button>
+			<button id="al6" class="al">6</button>
+			<button class="al islem">x</button>
+			
+			<button id="al1" class="al">1</button>
+			<button id="al2" class="al">2</button>
+			<button id="al3" class="al">3</button>
+			<button class="al islem">-</button>
+			<button class="al islem">+</button>
+			
+			<button id="al0" class="al ">0</button>
+			<button class="al esittir islem ">=</button>
+		</div>
+    </div>
+    </div>
+
+</body>
+</html>

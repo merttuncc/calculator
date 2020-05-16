@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+.ic{
+	width: 300px;
+	margin: auto;
+	
+}
+.dis{
+  width: %100;
+}
+.calculator{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-gap: 12px ;
+}
+.islem{
+   	margin-bottom: 5px;
+    border:1px solid gray;
+    background-color: white;
+   
+}
+
+ #metin{
+  border:none;
+  
+  outline: none;
+  font-size: 30px;
+  padding: 10px 10px;
+
+  color: black;
+  text-align: right;
+  
+ 
+}
+.al{
+    border-radius: 3px;
+    border: 1px solid green;
+    cursor: pointer;
+    background-color: lightblue;
+
+}
+.al:hover{
+  background-color: green;
+  
+}
+
+@media only screen and (min-width: 576px){
+  .dis{
+    max-width: 540px;
+  }
+   #metin{
+    font-size: 10px;
+     width: 25%;
+  }
+ 
+  .ic{
+    width: 300px;
+  }
+  .calculator,.islem{
+    width: 40%;
+  }
+}
+
+@media only screen and  (min-width: 768px){
+  .dis{
+    max-width: 720px;
+  }
+   #metin{
+    font-size: 20px;
+     width: 50%;
+  }
+  
+  .ic{
+    width: 240px;
+  }
+  .calculator,.islem{
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .dis{
+    max-width: 960px;
+  }
+   #metin{
+    font-size: 30px;
+    width: 75%;
+  }
+   
+  .ic{
+    width: 280px;
+  }
+  .calculator,.islem{
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .dis{
+    max-width: 1140px;
+  }
+  #metin{
+    font-size: 40px;
+    width: 100%;
+  }
+  .ic{
+    width: 350px;
+  }
+  .calculator,.islem{
+    width: 100%;
+  }
+}
